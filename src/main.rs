@@ -1,18 +1,9 @@
-use std::env;
-
-use diesel::{sqlite::SqliteConnection, Connection};
-use dotenvy::dotenv;
+use functions::show_posts::show_posts;
 
 pub mod schema;
 pub mod models;
-
-pub fn connect() -> SqliteConnection {
-    dotenv().ok();
-
-    let db_url = env::var("DATABASE_URL").expect("No DATABASE_URL set");
-    SqliteConnection::establish(&db_url).expect("Cannot connect to the specified database")
-}
+pub mod functions;
 
 fn main() {
-    println!("Hello, world!");
+    show_posts();
 }
