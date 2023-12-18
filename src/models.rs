@@ -1,6 +1,6 @@
 use diesel::prelude::*;
 
-#[derive(Debug, Queryable, Selectable)]
+#[derive(Debug, Insertable, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::posts)]
 #[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 pub struct Post {

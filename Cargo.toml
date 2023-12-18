@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 diesel = { version = "2.1.4", features = [ "sqlite" ] }
 dotenvy = "*"
+random_word = { version = "*", features = [ "en" ]}

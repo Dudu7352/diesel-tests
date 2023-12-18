@@ -6,8 +6,6 @@ pub fn show_posts() {
 
     let connection = &mut connect();
     let results = posts
-        .filter(published.eq(true))
-        .limit(5)
         .select(Post::as_select())
         .load(connection).expect("Error loading posts");
 
